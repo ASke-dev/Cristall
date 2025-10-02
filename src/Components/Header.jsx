@@ -57,7 +57,7 @@ const Header = () => {
         return (
             <button 
                 onClick={openCart} 
-                className="relative bg-white border border-gray-200 px-2 sm:px-3 py-2 rounded-full flex items-center gap-1 sm:gap-2 shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30"
+                className="relative bg-white-50 border border-gray-200 px-2 sm:px-3 py-2 rounded-full flex items-center gap-1 sm:gap-2 shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30"
                 aria-label={`Корзина (${totalCount} товаров)`}
             >
                 <BsCart3 className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-[#A16341] transition-colors duration-200" />
@@ -77,9 +77,9 @@ const Header = () => {
         return (
             <button className="group hidden sm:flex items-center border border-gray-300 rounded-full p-2 px-3 space-x-2 hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30">
                 <FiUser className="h-4 w-4 sm:h-5 sm:w-5 text-gray-700 group-hover:text-[#A16341] transition-colors duration-200" />
-                <span className="text-gray-700 group-hover:text-[#A16341] transition-colors duration-200 text-xs sm:text-sm font-medium">
+                <NavLink to='' className="text-gray-700 group-hover:text-[#A16341] transition-colors duration-200 text-xs sm:text-sm font-medium">
                     Личный кабинет
-                </span>
+                </NavLink>
             </button>
         );
     };
@@ -91,27 +91,30 @@ const Header = () => {
     const navigationItems = [
         { href: '/', label: 'Каталог', isPrimary: true },
         { href: '/opto', label: 'Оптовые продажи' },
-        { href: '#', label: 'Продажи в розницу' },
-        { href: '#', label: 'О компании' },
-        { href: '#', label: 'Контакты' }
+        { href: '/prodaja', label: 'Продажи в розницу' },
+        { href: '/contacts', label: 'Контакты' },
+        { href: '/about', label: 'О нас' },
+        { href: '/vacancies', label: 'Отзывы' }
     ];
 
     return (
         <>
             <header className={`sticky top-0 z-40 transition-all duration-300 ${
                 scrolled 
-                    ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
-                    : 'bg-white shadow-md'
+                    ? 'bg-white/95-100 backdrop-blur-lg shadow-lg  ' 
+                    : 'bg-white-100 shadow-md'
             }`}>
                 <div className="max-w-screen-2xl mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-between h-16 lg:h-20">
                         {/* Logo */}
                         <div className="flex items-center gap-2 sm:gap-3">
+                            <NavLink to='/'>
+                                
                             <img 
                                 src="/logo.svg" 
                                 alt="Логотип" 
                                 className="h-7 sm:h-8 lg:h-10 transition-transform duration-200 hover:scale-105" 
-                            />
+                            /> </NavLink>
                             <div className="hidden md:block">
                         
                             </div>
@@ -119,7 +122,7 @@ const Header = () => {
 
                         {/* Desktop Navigation */}
                         <nav className="hidden lg:flex items-center space-x-1 xl:space-x-3">
-                            {navigationItems.slice(0, 3).map((item, index) => (
+                            {navigationItems.slice(0, 6).map((item, index) => (
                                 <NavLink
                                     key={item.label}
                                     to={item.href}
@@ -134,7 +137,7 @@ const Header = () => {
                                     }}
                                 >
                                     {item.isPrimary && (
-                                        <img src="/s.svg" alt="" className="inline-block w-4 h-4 mr-2" />
+                                        <img src="/s.svg" alt="" className="inline-block w-4 h-4 mr-2 mb-0.5" />
                                     )}
                                     {item.label}
                                 </NavLink>
@@ -221,9 +224,7 @@ const Header = () => {
 
                             {/* Additional mobile links */}
                             <div className="pt-2 border-t border-gray-100">
-                                <a href="#" className="block w-full p-3 text-gray-600 hover:text-[#A16341] hover:bg-gray-50 rounded-xl transition-all duration-200 animate-slideInLeft" style={{ animationDelay: '600ms', animationFillMode: 'both' }}>
-                                    О компании
-                                </a>
+                         
                                 <a href="#" className="block w-full p-3 text-gray-600 hover:text-[#A16341] hover:bg-gray-50 rounded-xl transition-all duration-200 animate-slideInLeft" style={{ animationDelay: '700ms', animationFillMode: 'both' }}>
                                     Вакансии
                                 </a>
