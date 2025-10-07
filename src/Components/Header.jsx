@@ -21,31 +21,29 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [scrolled]);
 
-    // Блокируем скролл когда открыто мобильное меню
     useEffect(() => {
         if (mobileMenuOpen) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
         }
-        
+
         return () => {
             document.body.style.overflow = '';
         };
     }, [mobileMenuOpen]);
 
-    // Закрываем мобильное меню по Escape
     useEffect(() => {
         const handleEscape = (e) => {
             if (e.key === 'Escape' && mobileMenuOpen) {
                 setMobileMenuOpen(false);
             }
         };
-        
+
         if (mobileMenuOpen) {
             document.addEventListener('keydown', handleEscape);
         }
-        
+
         return () => {
             document.removeEventListener('keydown', handleEscape);
         };
@@ -53,10 +51,10 @@ const Header = () => {
 
     const CartButton = () => {
         const { totalCount, openCart } = useCart();
-        
+
         return (
-            <button 
-                onClick={openCart} 
+            <button
+                onClick={openCart}
                 className="relative bg-white-50 border border-gray-200 px-2 sm:px-3 py-2 rounded-full flex items-center gap-1 sm:gap-2 shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30"
                 aria-label={`Корзина (${totalCount} товаров)`}
             >
@@ -77,7 +75,7 @@ const Header = () => {
         return (
             <button className="group hidden sm:flex items-center border border-gray-300 rounded-full p-2 px-3 space-x-2 hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30">
                 <FiUser className="h-4 w-4 sm:h-5 sm:w-5 text-gray-700 group-hover:text-[#A16341] transition-colors duration-200" />
-                <NavLink to='' className="text-gray-700 group-hover:text-[#A16341] transition-colors duration-200 text-xs sm:text-sm font-medium">
+                <NavLink to='/auth' className="text-gray-700 group-hover:text-[#A16341] transition-colors duration-200 text-xs sm:text-sm font-medium">
                     Личный кабинет
                 </NavLink>
             </button>
@@ -94,44 +92,40 @@ const Header = () => {
         { href: '/prodaja', label: 'Продажи в розницу' },
         { href: '/contacts', label: 'Контакты' },
         { href: '/about', label: 'О нас' },
-        { href: '/vacancies', label: 'Отзывы' }
+        { href: '/otzyv', label: 'Отзывы' }
     ];
 
     return (
         <>
-            <header className={`sticky top-0 z-40 transition-all duration-300 ${
-                scrolled 
-                    ? 'bg-white/95-100 backdrop-blur-lg shadow-lg  ' 
+            <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled
+                    ? 'bg-white/95-100 backdrop-blur-lg shadow-lg  '
                     : 'bg-white-100 shadow-md'
-            }`}>
+                }`}>
                 <div className="max-w-screen-2xl mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-between h-16 lg:h-20">
-                        {/* Logo */}
                         <div className="flex items-center gap-2 sm:gap-3">
                             <NavLink to='/'>
-                                
-                            <img 
-                                src="/logo.svg" 
-                                alt="Логотип" 
-                                className="h-7 sm:h-8 lg:h-10 transition-transform duration-200 hover:scale-105" 
-                            /> </NavLink>
+
+                                <img
+                                    src="/logo.svg"
+                                    alt="Логотип"
+                                    className="h-7 sm:h-8 lg:h-10 transition-transform duration-200 hover:scale-105"
+                                /> </NavLink>
                             <div className="hidden md:block">
-                        
+
                             </div>
                         </div>
 
-                        {/* Desktop Navigation */}
                         <nav className="hidden lg:flex items-center space-x-1 xl:space-x-3">
                             {navigationItems.slice(0, 6).map((item, index) => (
                                 <NavLink
                                     key={item.label}
                                     to={item.href}
-                                    className={`px-4 py-2 rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30 ${
-                                        item.isPrimary
+                                    className={`px-4 py-2 rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30 ${item.isPrimary
                                             ? 'bg-[#A16341] text-white shadow-md hover:bg-[#8B5232] hover:scale-105 active:scale-95'
                                             : 'text-gray-700 hover:text-[#A16341] hover:bg-gray-50'
-                                    }`}
-                                    style={{ 
+                                        }`}
+                                    style={{
                                         animationDelay: `${index * 100}ms`,
                                         animation: 'fadeInUp 0.6s ease-out forwards'
                                     }}
@@ -144,12 +138,10 @@ const Header = () => {
                             ))}
                         </nav>
 
-                        {/* Right side buttons */}
                         <div className="flex items-center gap-2 sm:gap-3">
                             <UserButton />
                             <CartButton />
-                            
-                            {/* Mobile menu button */}
+
                             <button
                                 onClick={() => setMobileMenuOpen(true)}
                                 className="lg:hidden p-2 rounded-md border border-gray-200 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30"
@@ -162,18 +154,14 @@ const Header = () => {
                 </div>
             </header>
 
-            {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
                 <div className="lg:hidden fixed inset-0 z-50">
-                    {/* Backdrop */}
-                    <div 
+                    <div
                         className="absolute inset-0 bg-black/50 transition-opacity duration-300 animate-fadeIn"
                         onClick={closeMobileMenu}
                     />
-                    
-                    {/* Menu Panel */}
+
                     <div className="absolute top-0 left-0 right-0 bg-white shadow-2xl animate-slideDown">
-                        {/* Menu Header */}
                         <div className="flex items-center justify-between p-4 border-b border-gray-100">
                             <div className="flex items-center gap-3">
                                 <img src="/logo.svg" alt="Логотип" className="h-8" />
@@ -191,26 +179,22 @@ const Header = () => {
                             </button>
                         </div>
 
-                        {/* Menu Content */}
                         <div className="p-4 space-y-2 max-h-[calc(100vh-120px)] overflow-y-auto">
-                            {/* User Account Button - mobile */}
-                            <button className="w-full flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-200 ">
+                            <NavLink to='/auth' className="w-full flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-200 ">
                                 <FiUser className="h-5 w-5 text-gray-700" />
                                 <span className="text-gray-700 font-medium">Личный кабинет</span>
-                            </button>
+                            </NavLink>
 
-                            {/* Navigation Links */}
                             {navigationItems.map((item, index) => (
                                 <NavLink
                                     key={item.label}
                                     to={item.href}
                                     onClick={closeMobileMenu}
-                                    className={`block w-full p-3 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30 animate-slideInLeft ${
-                                        item.isPrimary
+                                    className={`block w-full p-3 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A16341]/30 animate-slideInLeft ${item.isPrimary
                                             ? 'bg-[#A16341] text-white shadow-md hover:bg-[#8B5232]'
                                             : 'text-gray-700 hover:bg-gray-50 hover:text-[#A16341]'
-                                    }`}
-                                    style={{ 
+                                        }`}
+                                    style={{
                                         animationDelay: `${(index + 1) * 100}ms`,
                                         animationFillMode: 'both'
                                     }}
@@ -222,9 +206,8 @@ const Header = () => {
                                 </NavLink>
                             ))}
 
-                            {/* Additional mobile links */}
                             <div className="pt-2 border-t border-gray-100">
-                         
+
                                 <a href="#" className="block w-full p-3 text-gray-600 hover:text-[#A16341] hover:bg-gray-50 rounded-xl transition-all duration-200 animate-slideInLeft" style={{ animationDelay: '700ms', animationFillMode: 'both' }}>
                                     Вакансии
                                 </a>
@@ -239,7 +222,6 @@ const Header = () => {
 
             <CartDrawer />
 
-            {/* CSS Animations */}
             <style jsx>{`
                 @keyframes fadeIn {
                     from { opacity: 0; }
