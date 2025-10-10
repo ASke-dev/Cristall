@@ -260,11 +260,11 @@ const SlideCard = ({ title, text, imgA, imgB }) => (
 
             </div>
 
-            <div className="w-full md:w-1/2 relative flex items-center justify-center min-w-[180px] z-10 mt-4 md:mt-0 h-64 md:h-full">
+            <div className="w-full md:w-1/2 relative flex items-center justify-center min-w-[180px] z-10 mt-4 md:mt-0 h-64 md:h-full ">
                 <motion.img
                     src={imgA}
                     alt="promo A"
-                    className="w-40 md:w-72 object-cover rounded-xl absolute right-4 md:right-1 transform md:rotate-6 shadow-2xl"
+                    className="w-40 md:w-72 object-cover rounded-xl absolute right-4 md:right-1 transform md:rotate-6 "
                     variants={imageVariants}
                     whileHover={{
                         scale: 1.05,
@@ -276,7 +276,7 @@ const SlideCard = ({ title, text, imgA, imgB }) => (
                 <motion.img
                     src={imgB}
                     alt="promo B"
-                    className="w-40 md:w-72 object-cover rounded-xl absolute left-4 md:left-1 md:-rotate-6 shadow-2xl"
+                    className="w-40 md:w-72 object-cover rounded-xl absolute left-4 md:left-1 md:-rotate-6 "
                     variants={imageVariants}
                     transition={{ ...imageVariants.visible.transition, delay: 0.4 }}
                     whileHover={{

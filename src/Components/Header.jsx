@@ -208,12 +208,7 @@ const Header = () => {
 
                             <div className="pt-2 border-t border-gray-100">
 
-                                <a href="#" className="block w-full p-3 text-gray-600 hover:text-[#A16341] hover:bg-gray-50 rounded-xl transition-all duration-200 animate-slideInLeft" style={{ animationDelay: '700ms', animationFillMode: 'both' }}>
-                                    Вакансии
-                                </a>
-                                <a href="#" className="block w-full p-3 text-gray-600 hover:text-[#A16341] hover:bg-gray-50 rounded-xl transition-all duration-200 animate-slideInLeft" style={{ animationDelay: '800ms', animationFillMode: 'both' }}>
-                                    Отзывы
-                                </a>
+                      
                             </div>
                         </div>
                     </div>

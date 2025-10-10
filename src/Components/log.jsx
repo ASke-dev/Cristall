@@ -328,7 +328,7 @@ export default function App() {
             transition={{ duration: 0.5 }}
             className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden"
           >
-            <div className="bg-gradient-to-r from-amber-600 to-orange-600 p-4 sm:p-8 text-white relative overflow-hidden">
+            <div className="bg-gradient-to-r bg-[#A16341] to-orange-600 p-4 sm:p-8 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-20 -mt-20"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -ml-16 -mb-16"></div>
 
@@ -646,7 +646,7 @@ export default function App() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleSignOut}
-                className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 text-sm sm:text-base"
+                className="w-full bg-gradient-to-r bg-[#A16341] to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 text-sm sm:text-base"
               >
                 <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Выйти из аккаунта</span>

@@ -63,9 +63,7 @@ const ProductCard = ({ image, title, address }) => {
               <span>Пн - Пт 9:00 - 19:00</span>
             </div>
 
-            <NavLink className="px-4 py-2 border border-amber-700 text-amber-700 rounded-full text-sm font-medium hover:bg-amber-700 hover:text-white transition-colors">
-              Забронировать продукцию
-            </NavLink>
+   
           </div>
         </div>
       </motion.div>

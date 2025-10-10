@@ -191,7 +191,7 @@ export default function BakeryComponent() {
                                 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight"
                                 variants={heroItemVariants}
                             >
-                                Кондитерское <span className="text-orange-600">искусство</span>
+                                Кондитерское <span className="text-amber-800">искусство</span>
                             </motion.h1>
 
                             <motion.p
@@ -207,7 +207,7 @@ export default function BakeryComponent() {
                             >
                                 <motion.button
                                     onClick={handleDownload}
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 duration-300 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transform transition-transform"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-800 hover:bg-orange-700 duration-300 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transform transition-transform"
                                     whileHover={{ scale: 1.05, boxShadow: "0 10px 15px rgba(234, 88, 12, 0.4)" }}
                                     whileTap={{ scale: 0.95 }}
                                     aria-label="Скачать список продукции"
@@ -253,7 +253,7 @@ export default function BakeryComponent() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
                     >
-                        Наши <span className="text-orange-500">кондитерские партнёры</span>
+                        Наши <span className="text-amber-800">кондитерские партнёры</span>
                     </motion.h2>
 
                     <motion.div
@@ -283,9 +283,9 @@ export default function BakeryComponent() {
             <footer id="i" className="bg-white ">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex flex-col items-center md:items-start gap-1">
-                        <div className="flex items-center gap-3">
-                            <FileText size={24} className="text-orange-500" />
-                            <p className="font-bold text-lg text-white">Документы и Контакты</p>
+                        <div className="flex items-center gap-3 md:gap-4 ">
+                            <FileText size={24} className="text-amber-800" />
+                            <p className="font-bold text-lg text-black">Документы и Контакты</p>
                         </div>
                         <p className="text-sm text-gray-400 mt-1 text-center md:text-left">
                             Прайс-листы, сертификаты, инструкции и форма обратной связи.
@@ -293,9 +293,7 @@ export default function BakeryComponent() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4">
-                        <a href="mailto:manager@krystall.com" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-medium px-4 py-2 rounded-lg transition-colors">
-                            <span className="text-sm">Написать менеджеру</span>
-                        </a>
+                    
                         <button
                             onClick={handleDownload}
                             className="inline-flex items-center gap-2 bg-white text-orange-700 hover:bg-orange-100 font-medium px-4 py-2 rounded-lg border border-orange-300 transition-colors"

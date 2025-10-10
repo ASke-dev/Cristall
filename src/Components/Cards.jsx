@@ -62,7 +62,7 @@ const Sidebar = ({ isOpen, onClose, activeItem, onItemClick }) => {
                 />
             )}
 
-            <aside className={`fixed lg:sticky top-0 lg:top-6 left-0 h-full lg:h-[calc(100vh-4rem)] w-80 lg:w-full z-50 lg:z-0 transform transition-transform duration-300 lg:transform-none ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+            <aside className={`fixed lg:sticky top-0 lg:top-6 left-0 h-full lg:h-[calc(100vh-4rem)] w-80 lg:w-full z-40 lg:z-0 transform transition-transform duration-300 lg:transform-none ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
                 <div className="bg-white rounded-none lg:rounded-3xl p-4 lg:p-6 shadow-lg lg:shadow-sm overflow-y-auto" style={{ maxHeight: '100%' }}>
                     <div className="flex items-center justify-between mb-6 lg:hidden">
                         <h3 className="font-serif text-xl text-gray-800">Меню</h3>
@@ -167,7 +167,7 @@ const ProductCard = ({ product, onOpen, index }) => {
 
             <div className="bg-white rounded-xl lg:rounded-2xl shadow-inner relative">
 
-                <div className="h-32 sm:h-36 lg:h-44 flex items-center justify-center -mt-1 sm:-mt-2 mb-3 sm:mb-4 relative">
+                <div className=" sm:h-36 lg:h-44 flex items-center justify-center -mt-1 sm:-mt-2 mb-3 sm:mb-4 relative">
 
                     <div className="bg-white p-2 sm:p-3 rounded-xl lg:rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105">
                         <img
@@ -211,7 +211,7 @@ const ProductCard = ({ product, onOpen, index }) => {
             >
                 <button
                     onClick={handleAdd}
-                    className="bg-[#A16341] hover:bg-[#8B5232] active:bg-[#8B5232] text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-full flex items-center gap-1.5 sm:gap-2 shadow-lg hover:shadow-xl transition-all duration-200 font-medium text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#A16341]/30 touch-manipulation active:scale-95 ml-17 mb-0"
+                    className="bg-[#A16341] hover:bg-[#8B5232] active:bg-[#8B5232] text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-full flex items-center gap-1.5 sm:gap-2 shadow-lg hover:shadow-xl transition-all duration-200 font-medium text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#A16341]/30 touch-manipulation active:scale-95 ml-17 mb-0 "
                 >
                     <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span className="hidden sm:inline">Корзина</span>
@@ -290,7 +290,7 @@ const CatalogDesign = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
             <div className="max-w-screen-2xl mx-auto">
-                <div className="lg:hidden sticky top-0 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-4 py-3">
+                <div className="lg:hidden sticky top-[60px] z-30  backdrop-blur-sm border-b border-gray-100 px-4 py-3">
                     <div className="flex items-center justify-between">
                         <button
                             onClick={toggleSidebar}
@@ -344,8 +344,9 @@ const CatalogDesign = () => {
                                 <div className="text-6xl mb-4">
                                     <HashLoader
                                         color="#BF6519"
-                                        size={400}
-                                        speedMultiplier={0.9}
+                                        size={260}
+                                        speedMultiplier={1.0}
+                                        
                                     />
                                 </div>
 

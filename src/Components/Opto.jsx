@@ -120,7 +120,7 @@ const Optoviy = () => {
                             </motion.p>
                             <motion.button
                                 onClick={scrollToContact}
-                                className="bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold transition-transform duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-sm md:text-base"
+                                className="bg-amber-800 hover:bg-amber-700 active:bg-amber-800 text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold transition-transform duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-sm md:text-base"
                                 variants={itemVariants}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -159,7 +159,7 @@ const Optoviy = () => {
                     viewport={{ amount: 0.2 }}
                 >
                     <motion.h2
-                        className="text-2xl md:text-3xl xl:text-4xl font-extrabold text-gray-900 mb-8 md:mb-10 lg:mb-12 border-b pb-4 border-amber-300/50"
+                        className="text-2xl md:text-3xl xl:text-4xl font-extrabold text-gray-900 mb-8 md:mb-10 lg:mb-12 border-b pb-4 border-amber-900"
                         variants={itemVariants}
                     >
                         Условия и преимущества партнёрства
@@ -167,7 +167,7 @@ const Optoviy = () => {
 
                     <div className="space-y-6 md:space-y-8 text-gray-700 leading-relaxed">
                         <motion.p
-                            className="text-sm md:text-base lg:text-lg leading-loose bg-gray-50 p-4 rounded-lg border-l-4 border-amber-500"
+                            className="text-sm md:text-base lg:text-lg leading-loose bg-gray-50 p-4 rounded-lg border-l-4 border-amber-900"
                             variants={itemVariants}
                         >
                             В слабосинеевых полях (при флуктуации на уровне единиц процентов) лазер экстремально синхронизует эксимер.
@@ -178,7 +178,7 @@ const Optoviy = () => {
                         </motion.p>
 
                         <motion.p
-                            className="text-sm md:text-base lg:text-lg leading-loose bg-gray-50 p-4 rounded-lg border-l-4 border-amber-500"
+                            className="text-sm md:text-base lg:text-lg leading-loose bg-gray-50 p-4 rounded-lg border-l-4 border-amber-900"
                             variants={itemVariants}
                         >
                             Нестационарность, как известно, быстро развивается, если плазма неустойчиво притягивает взрывной гамма-квант.
@@ -189,7 +189,7 @@ const Optoviy = () => {
                         </motion.p>
 
                         <motion.p
-                            className="text-sm md:text-base lg:text-lg leading-loose bg-gray-50 p-4 rounded-lg border-l-4 border-amber-500"
+                            className="text-sm md:text-base lg:text-lg leading-loose bg-gray-50 p-4 rounded-lg border-l-4 border-amber-900"
                             variants={itemVariants}
                         >
                             Волна едва ли квантуема. В самом общем случае струя бифокально стабилизирует фотон. Излучение, на первый взгляд,

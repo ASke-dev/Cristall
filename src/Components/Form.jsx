@@ -160,7 +160,7 @@ export default function ContactForm() {
             <motion.p initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-gray-600 mb-6">Ваша заявка отправлена. Наш менеджер свяжется с вами в ближайшее время.</motion.p>
             <motion.button
               onClick={() => setSubmitted(false)}
-              className="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+              className="px-6 py-2 bg-amber-800 text-white rounded-lg hover:bg-orange-600 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0 }}
@@ -186,7 +186,7 @@ export default function ContactForm() {
               Форма связи с менеджером
             </h1>
             <div className="flex items-center">
-              <div className="h-1 bg-orange-500 rounded-full w-24"></div>
+              <div className="h-1 bg-amber-800 rounded-full w-24"></div>
               <div className="ml-4 flex space-x-1 h-3 items-end">
                 <AnimatedDot delay={0.0} />
                 <AnimatedDot delay={0.1} />
@@ -273,7 +273,7 @@ export default function ContactForm() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-10 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 font-medium text-lg min-w-40 flex items-center justify-center"
+                className="px-10 py-3 bg-amber-800 text-white rounded-lg hover:bg-orange-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 font-medium text-lg min-w-40 flex items-center justify-center"
                 whileHover={!isSubmitting ? { scale: 1.05 } : {}}
                 whileTap={!isSubmitting ? { scale: 0.95 } : {}}
                 animate={isSubmitting ? { scale: 0.98, opacity: 0.8 } : { scale: 1, opacity: 1 }}
