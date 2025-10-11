@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { NavLink, Link } from 'react-router-dom';
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -22,6 +23,7 @@ const itemVariants = {
 
 const Footer = () => {
     const [isMobile, setIsMobile] = useState(false);
+
 
     useEffect(() => {
         const mediaQuery = window.matchMedia(`(max-width: 767px)`);
@@ -65,25 +67,33 @@ const Footer = () => {
                     className="flex flex-col md:flex-row items-center gap-4 text-sm"
                     transition={{ staggerChildren: 0.1 }}
                 >
-                    <motion.a
-                        href="/privacy"
+                    <motion.div
                         className="text-gray-300 hover:text-amber-400 duration-200"
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Политика конфиденциальности
-                    </motion.a>
 
-                    <motion.a
-                        href="tel:+996501941268"
-                        className="text-gray-300 hover:text-amber-400 duration-200 font-semibold"
+                        <Link
+                            to="/privacy"
+
+                        >
+                            Политика конфиденциальности
+                        </Link>
+                    </motion.div>
+                    <motion.div
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        className="text-gray-300 hover:text-amber-400 duration-200 font-semibold"
                     >
-                        +996 (501) 941-268
-                    </motion.a>
+
+                        <NavLink
+                            to="tel:+996501941268"
+                        >
+                            +996 (501) 941-268
+                        </NavLink>
+                    </motion.div>
                 </motion.div>
             </div>
         </motion.footer>
